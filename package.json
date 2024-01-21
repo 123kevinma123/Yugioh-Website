@@ -2,11 +2,13 @@
   "dependencies": {
     "axios": "^1.6.5",
     "concurrently": "^8.2.2",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.1.0"
   },
   "scripts": {
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "server": "cd api && npm start",
     "client": "cd client && npm start"
-    }
+  }
 }
