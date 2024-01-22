@@ -17,37 +17,53 @@
   /*border: 2px solid green;*/
 }
 .logo {
+  display: flex;
   color: #abb2bf;
   background-color: transparent;
+  border: 2px solid red;
+  font-size: 1em;
+  align-items: center;
+  margin-left: 1em;
 }
-.navButtons {
-  display: flex;
+.navList {
+  display: block;
   justify-content: flex-end;
   background-color: transparent;
-  /*border: 2px solid red;*/
-  width: 10em;
+  border: 2px solid red;
+  width: auto;
   justify-content: center;
 }
-.profileButton {
+.buttonStyle {
   color: #abb2bf;
   cursor: pointer;
   background-color: transparent;
   font-size: 1em;
-  /*border: none;*/
+  border: 2px solid blue;
+  width: 5em;
+  height: 4em;
+}
+.profileButton {
+  content: "";
 }
 .profileButton:hover {
   color: #e0e0e0;
 }
 .uploadButton {
-  color: #abb2bf;
-  cursor: pointer;
-  background-color: transparent;
-  font-size: 1em;
-  /*border: none;*/
+  content: "";
 }
 .uploadButton:hover {
   color: #e0e0e0;
 }
+.signInButton {
+  content: "";
+}
+.signInButton:hover {
+  color: #e0e0e0;
+}
+.icon {
+  display: none;
+}
+
 .mainBody {
   display: flex;
   justify-content: center;
@@ -55,19 +71,65 @@
   height: 100vh;
 
 }
-.search {
+.searchBox {
   display: flex;
   color: #abb2bf;
-  height: 4em;
-  width: 90%;
-  justify-content: center; /*for the "search" word */
+  height: 3.5em;
+  width: 600px;
   align-self: center;
-  /*border: 2px solid red;*/
+  border: 2px solid red;
   background-color: #21252b;
+  margin-top: -2em;
+  align-items: center;
+  font-size: 1em; /*changes height of box??*/
+}
+.searchContent {
+  margin-left: 1em;
+  border: 2px solid green;
+  /*might need to make bigger later*/
 }
 .footer {
   margin-top: -4em;
   height: 4em;
   background-color: #21252b;
   color: #abb2bf;
+}
+@media (max-width: 900px) {
+  .searchBox {
+    width: 80%;
+  }
+  .navList {
+    height: fit-content;
+    position: relative;
+  }
+  .navButtons {
+    display: grid;
+  }
+  .buttonStyle {
+    height: 4em;
+  }
+  .profileButton {
+    content: "";
+    /*display: none;*/
+  }
+  .uploadButton {
+    content: "";
+  }
+  .signInButton {
+    content: "";
+    display: none;
+  }
+  .icon {
+    display: flex;
+    color: #abb2bf;
+    font-size: 2.5em;
+    background-color: transparent;
+    height: 1.5em;
+    justify-content: center;
+    align-items: center;
+    width: 2em;
+  }
+  .icon:hover {
+    color: #e0e0e0;
+  }
 }

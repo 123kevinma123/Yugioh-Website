@@ -1,6 +1,8 @@
 //import logo from './logo.svg';
 import axios from 'axios';
 import './App.css';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 
 const apiCall = () => {
@@ -17,27 +19,37 @@ const apiCall = () => {
 //highlight color:
 //#e0e0e0
 
-//background could be some 
+//probably replace "sign in" with "profile" after you sign in 
 function App() {
   
   return (
     <div className = "wrapper">
       <header className = "navBar">
         <div className = "logo">
-          Logo
+          Yugioh.Market
         </div>
-        <nav className = "navButtons">
-          <button className = "uploadButton">
-            Uploadd
-          </button>
-          <button className = "profileButton">
-            Profile
-          </button>
+        <nav className = "navList">
+          <div className = "icon">
+          <FontAwesomeIcon icon={faBars} />
+          </div>
+          <div className = "navButtons">
+            <button className = "buttonStyle signInButton">
+              Sign In
+            </button>
+            {/*<button className = "buttonStyle uploadButton">
+              Upload
+              </button> */}
+            <button className = "buttonStyle profileButton">
+              Profile
+            </button>
+          </div>
         </nav>
       </header>
       <div className = "mainBody">
-        <div className = "search">
-          Search
+        <div className = "searchBox">
+          <div className = "searchContent">
+            Search
+          </div>
         </div>
       </div>
       <footer className = "footer">
