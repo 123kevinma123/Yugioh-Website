@@ -26,7 +26,6 @@
   margin-left: 1em;
 }
 .navList {
-  display: flex;
   /*border: 2px solid red;*/
   background-color: #21252b;
   align-items: center;
@@ -140,7 +139,8 @@
     height: 1.5em;
     justify-content: center;
     align-items: center;
-    width: 2em;
+    width: 2.3em;
+    border: 2px solid green;
   }
   .icon:hover {
     cursor: pointer;
@@ -148,5 +148,9 @@
   }
   .clicked {
     display: inline-block;
+    border: 2px solid red;
+  }
+  .signInButton {
+    display: none;
   }
 }
