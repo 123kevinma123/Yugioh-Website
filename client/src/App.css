@@ -20,7 +20,7 @@
   display: flex;
   color: #abb2bf;
   background-color: transparent;
-  border: 2px solid red;
+  /*border: 2px solid red;*/
   font-size: 1em;
   align-items: center;
   margin-left: 1em;
@@ -29,41 +29,28 @@
   display: block;
   justify-content: flex-end;
   background-color: transparent;
-  border: 2px solid red;
+  /*border: 2px solid red;*/
   width: auto;
   justify-content: center;
 }
 .buttonStyle {
   color: #abb2bf;
   cursor: pointer;
-  background-color: transparent;
   font-size: 1em;
-  border: 2px solid blue;
+  /*border: 2px solid blue;*/
   width: 5em;
   height: 4em;
 }
-.profileButton {
-  content: "";
+.profileButton, .uploadButton, .signInButton {
+  border: none;
+  background-color: #21252b;
 }
-.profileButton:hover {
-  color: #e0e0e0;
-}
-.uploadButton {
-  content: "";
-}
-.uploadButton:hover {
-  color: #e0e0e0;
-}
-.signInButton {
-  content: "";
-}
-.signInButton:hover {
+.profileButton:hover, .uploadButton:hover, .signInButton:hover {
   color: #e0e0e0;
 }
 .icon {
   display: none;
 }
-
 .mainBody {
   display: flex;
   justify-content: center;
@@ -108,15 +95,7 @@
   .buttonStyle {
     height: 4em;
   }
-  .profileButton {
-    content: "";
-    /*display: none;*/
-  }
-  .uploadButton {
-    content: "";
-  }
-  .signInButton {
-    content: "";
+  .profileButton, .uploadButton, .signInButton {
     display: none;
   }
   .icon {
@@ -130,6 +109,10 @@
     width: 2em;
   }
   .icon:hover {
+    cursor: pointer;
     color: #e0e0e0;
+  }
+  .clicked {
+    display: inline-block;
   }
 }

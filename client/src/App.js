@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import {useState} from "react";
 
 
 const apiCall = () => {
@@ -20,8 +21,20 @@ const apiCall = () => {
 //#e0e0e0
 
 //probably replace "sign in" with "profile" after you sign in 
+
+const menuClick = () => {
+  alert("Menu Clicked!");
+}
+
 function App() {
   
+  const[isClicked, setIsClicked] = useState(false);
+
+  const menuClick = () => {
+    setIsClicked(!isClicked);
+    /*alert(isClicked);*/
+  }
+
   return (
     <div className = "wrapper">
       <header className = "navBar">
@@ -29,17 +42,18 @@ function App() {
           Yugioh.Market
         </div>
         <nav className = "navList">
-          <div className = "icon">
-          <FontAwesomeIcon icon={faBars} />
+          <div className = "icon" onClick = {menuClick}>
+          <FontAwesomeIcon icon = {faBars} />
           </div>
+          {console.log(isClicked + "hello world")}
           <div className = "navButtons">
-            <button className = "buttonStyle signInButton">
+            <button className = {`buttonStyle signInButton ${isClicked ? 'clicked' : ''}`}>
               Sign In
             </button>
-            {/*<button className = "buttonStyle uploadButton">
+            <button className = {`buttonStyle uploadButton ${isClicked ? 'clicked' : ''}`}>
               Upload
-              </button> */}
-            <button className = "buttonStyle profileButton">
+            </button>
+            <button className = {`buttonStyle profileButton ${isClicked ? 'clicked' : ''}`}>
               Profile
             </button>
           </div>
