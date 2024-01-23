@@ -56,7 +56,11 @@
   justify-content: center;
   /*border: 2px solid green;*/
   height: 100vh;
-
+  background-image: url("wallpaper.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 8%;
+  /*need to make into a separate thing*/
 }
 .searchBox {
   display: flex;
