@@ -47,14 +47,14 @@ function App() {
           </div>
           {console.log(isClicked + "hello world")}
           <div className = "navButtons">
-            <button className = {`buttonStyle signInButton ${isClicked ? 'clicked' : ''}`}>
-              Sign In
-            </button>
             <button className = {`buttonStyle uploadButton ${isClicked ? 'clicked' : ''}`}>
               Upload
             </button>
             <button className = {`buttonStyle profileButton ${isClicked ? 'clicked' : ''}`}>
               Profile
+            </button>
+            <button className = {`buttonStyle signInButton ${isClicked ? 'clicked' : ''}`}>
+              Sign In
             </button>
           </div>
         </nav>
@@ -67,7 +67,12 @@ function App() {
         </div>
       </div>
       <footer className = "footer">
-        Footer
+        <div className = "footerText">
+          Copyright Kevin Ma 2024
+        </div>
+        <div className = "footerSocials">
+          Socials here
+        </div>
       </footer>
     </div>
   );
