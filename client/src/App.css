@@ -1,7 +1,7 @@
 *{
   background-color: transparent;
   /*border: 3px solid red;*/
-  
+  font-family: Sans-Serif;
 }
 .wrapper {
   display: flex;
@@ -9,6 +9,7 @@
   /*height: 100vh;*/
 }
 .navBar {
+  display: flex;
   z-index: 1;
   margin-bottom: -4em;
   display: flex;
@@ -25,15 +26,23 @@
   /*border: 2px solid red;*/
   font-size: 1.5em;
   align-items: center;
-  margin-left: 1em;
+  padding-left: 1em;
+  -webkit-tap-highlight-color: transparent; 
 }
 .logo:hover {
   cursor: pointer;
 }
+.logo::selection {
+  color: none;
+  background: none;
+}
 .navList {
   /*border: 2px solid red;*/
   background-color: transparent;
-  align-items: center;
+  /*align-items: center;*/
+}
+.navButtons {
+  display: flex;
 }
 .buttonStyle {
   color: #ffa4fa;
@@ -50,6 +59,10 @@
 }
 .profileButton:hover, .uploadButton:hover, .signInButton:hover {
   border-bottom: 4px solid #ffa4fa;
+}
+.profileButton::selection, .uploadButton::selection, .signInButton::selection {
+  color:none;
+  background: none;
 }
 /*.signInButton {
   color: #21252b;
@@ -85,6 +98,10 @@
   opacity: 70%;
   /*background-blend-mode: darken;*/
   background-attachment:local;
+}
+.backgroundImage::selection {
+  color: none;
+  background: none;
 }
 /*.searchBox {
   z-index: 1;
@@ -132,19 +149,13 @@
   .searchBox {
     width: 80%;
   }
-  .navList {
-    height: fit-content;
-    position: relative;
-  }
-  .navButtons {
-    display: grid;
-  }
-  .buttonStyle {
-    height: 4em;
-  }
   .profileButton, .uploadButton, .signInButton {
     display: none;
     background-color: black;
+  }
+  .navList {
+    position: absolute;
+    right: 0;
   }
   .icon {
     display: flex;
@@ -152,10 +163,11 @@
     font-size: 2.5em;
     background-color: transparent;
     height: 1.5em;
+    width: 2em;
     justify-content: center;
     align-items: center;
-    width: 2.3em;
-    margin-right: 4px;
+    position: absolute;
+    right: 0;
     /*border: 2px solid green;*/
   }
   .icon:hover {
@@ -163,10 +175,20 @@
     color: #ffa4fa;
   }
   .clicked {
-    display: inline-block;
+    display: block;
     /*border: 2px solid red;*/
+    border-bottom: 4px solid transparent;
+    width: 10em;
   }
-  .signInButton {
-    display: none;
+  .dropDownMenu {
+    background-color: black;
+    height: fit-content;
+    width: 100%;
+    overflow: hidden;
+    /*border: 2px solid red;*/
+    margin-top: 4em;
+  }
+  .backgroundBlur {
+    filter: brightness(0.5);
   }
 }

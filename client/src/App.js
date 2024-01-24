@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 
 const apiCall = () => {
@@ -22,9 +22,6 @@ const apiCall = () => {
 
 //probably replace "sign in" with "profile" after you sign in 
 
-const menuClick = () => {
-  alert("Menu Clicked!");
-}
 
 function App() {
   
@@ -34,6 +31,24 @@ function App() {
     setIsClicked(!isClicked);
     /*alert(isClicked);*/
   }
+
+  const closeMenu = (e) => {
+    // Check if the click happened outside the dropdown menu
+    const dropdownMenu = document.querySelector(".dropDownMenu");
+    const icon = document.querySelector(".icon");
+    if (dropdownMenu && !dropdownMenu.contains(e.target)
+      && icon && !icon.contains(e.target)
+    ) {
+      setIsClicked(false);
+    }
+  };
+
+  useEffect(() => {
+    document.body.addEventListener("click", closeMenu);
+    return () => {
+      document.body.removeEventListener("click", closeMenu);
+    };
+  }, []);
 
   return (
     <div className = "wrapper">
@@ -45,8 +60,7 @@ function App() {
           <div className = "icon" onClick = {menuClick}>
           <FontAwesomeIcon icon = {faBars} />
           </div>
-          {console.log(isClicked + "hello world")}
-          <div className = "navButtons">
+          <div className = {`navButtons ${isClicked ? 'clicked dropDownMenu' : ''}`}>
             <button className = {`buttonStyle uploadButton ${isClicked ? 'clicked' : ''}`}>
               Upload
             </button>
@@ -60,7 +74,7 @@ function App() {
         </nav>
       </header>
       <div className = "mainBody">
-        <img className = "backgroundImage">
+        <img className = {`backgroundImage ${isClicked ? 'backgroundBlur' : ''}`}>
         </img>
         {/*<div className = "searchBox">
           <div className = "searchContent">
