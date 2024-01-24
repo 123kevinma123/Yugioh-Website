@@ -1,6 +1,7 @@
 *{
-  background-color: #21252b;
+  background-color: transparent;
   /*border: 3px solid red;*/
+  
 }
 .wrapper {
   display: flex;
@@ -13,52 +14,56 @@
   display: flex;
   justify-content: space-between;
   height: 4em;
-  background-color: #21252b;
+  background-color: black;
+  opacity: 70%;
   /*border: 2px solid green;*/
 }
 .logo {
   display: flex;
-  color: #F5A051;
+  color: #ffa4fa;
   background-color: transparent;
   /*border: 2px solid red;*/
   font-size: 1.5em;
   align-items: center;
   margin-left: 1em;
 }
+.logo:hover {
+  cursor: pointer;
+}
 .navList {
   /*border: 2px solid red;*/
-  background-color: #21252b;
+  background-color: transparent;
   align-items: center;
 }
 .buttonStyle {
-  color: #abb2bf;
+  color: #ffa4fa;
   cursor: pointer;
-  font-size: 1em;
   /*border: 2px solid blue;*/
-  background-color: #21252b;
+  background-color: transparent;
   height: 4em;
   width: 6em;
 }
-.profileButton, .uploadButton {
+.profileButton, .uploadButton, .signInButton {
+  font-size: 1em;
+  line-height: 1.1em;
   border: none;
 }
-.profileButton:hover, .uploadButton:hover {
-  color: #e0e0e0;
-  transition: 200ms;
+.profileButton:hover, .uploadButton:hover, .signInButton:hover {
+  border-bottom: 4px solid #ffa4fa;
 }
-.signInButton {
+/*.signInButton {
   color: #21252b;
   border: none;
-  background-color: #F5A051;
+  background-color: #A55DD5;
   border-radius: 10px;
   height: 2.5em;
   margin-right: 1em;
-  /*border: 2px solid blue;*/
+  border: 2px solid blue;
 }
 .signInButton:hover {
   transition: 200ms;
   background-color: #f5a051c0;
-}
+}*/
 .icon {
   display: none;
 }
@@ -67,37 +72,46 @@
   justify-content: center;
   /*border: 2px solid green;*/
   height: 100vh;
-  /*background-image: url("wallpaper.jpg");*/
-  background-size: cover;
-  background-position: center;
-  opacity: 100%;
-  /*need to make into a separate thing*/
-  background-color: #282c34;
+  background-color: rgb(68, 68, 68);
 }
-.searchBox {
+.backgroundImage {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("elshaddoll.png");
+  background-size: cover;
+  background-position: center top;
+  filter: blur(0px);
+  opacity: 70%;
+  /*background-blend-mode: darken;*/
+  background-attachment:local;
+}
+/*.searchBox {
+  z-index: 1;
   display: flex;
-  color: #abb2bf;
+  color: #9A48D0;
   height: 3.5em;
   width: 600px;
   align-self: center;
-  /*border: 2px solid red;*/
-  background-color: #21252b;
+  border: 1px solid #9A48D0;
+  background-color: white;
   margin-top: -2em;
   align-items: center;
-  font-size: 1em; /*changes height of box??*/
   border-radius: 10px;
+}
+.searchBox:hover {
+  cursor: text;
 }
 .searchContent {
   margin-left: 1em;
-  /*border: 2px solid green;*/
-  /*might need to make bigger later*/
-}
+}*/
 .footer {
+  z-index: 1;
   display: flex;
   margin-top: -4em;
   height: 4em;
   background-color: #21252b;
-  color: #abb2bf;
+  color: #9A48D0;
   /*border: 2px solid blue;*/
   justify-content: space-between;
   align-items: center;
@@ -130,25 +144,27 @@
   }
   .profileButton, .uploadButton, .signInButton {
     display: none;
+    background-color: black;
   }
   .icon {
     display: flex;
-    color: #F5A051;
+    color: #ffa4fa;
     font-size: 2.5em;
     background-color: transparent;
     height: 1.5em;
     justify-content: center;
     align-items: center;
     width: 2.3em;
-    border: 2px solid green;
+    margin-right: 4px;
+    /*border: 2px solid green;*/
   }
   .icon:hover {
     cursor: pointer;
-    color: #f5a051c0;
+    color: #ffa4fa;
   }
   .clicked {
     display: inline-block;
-    border: 2px solid red;
+    /*border: 2px solid red;*/
   }
   .signInButton {
     display: none;

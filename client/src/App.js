@@ -60,20 +60,22 @@ function App() {
         </nav>
       </header>
       <div className = "mainBody">
-        <div className = "searchBox">
+        <img className = "backgroundImage">
+        </img>
+        {/*<div className = "searchBox">
           <div className = "searchContent">
             Search
           </div>
-        </div>
+  </div>*/}
       </div>
-      <footer className = "footer">
+      {/*<footer className = "footer">
         <div className = "footerText">
           Copyright Kevin Ma 2024
         </div>
         <div className = "footerSocials">
           Socials here
         </div>
-      </footer>
+  </footer> */}
     </div>
   );
 }
