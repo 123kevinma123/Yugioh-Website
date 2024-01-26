@@ -5,6 +5,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import {useState, useEffect} from "react";
 
+import SignIn from "./SignIn.js";
 
 const apiCall = () => {
   axios.get('http://localhost:9000/').then((data) => {
@@ -76,11 +77,11 @@ function App() {
       <div className = "mainBody">
         <img className = {`backgroundImage ${isClicked ? 'backgroundBlur' : ''}`}>
         </img>
-        {/*<div className = "searchBox">
+        <div className = {`searchBox ${isClicked ? 'backgroundBlur' : ''}`}>
           <div className = "searchContent">
             Search
           </div>
-  </div>*/}
+        </div>
       </div>
       {/*<footer className = "footer">
         <div className = "footerText">
