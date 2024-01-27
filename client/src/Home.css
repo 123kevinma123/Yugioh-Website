@@ -52,16 +52,16 @@
     height: 4em;
     width: 6em;
   }
-  .profileButton, .uploadButton, .signInButton {
+  .profileButton, .homeButton, .signInButton {
     font-size: 1em;
     line-height: 1.1em;
     border: none;
     border-bottom: 4px solid transparent;
   }
-  .profileButton:hover, .uploadButton:hover, .signInButton:hover {
+  .profileButton:hover, .homeButton:hover, .signInButton:hover {
     border-bottom: 4px solid #ffa4fa;
   }
-  .profileButton::selection, .uploadButton::selection, .signInButton::selection {
+  .profileButton::selection, .homeButton::selection, .signInButton::selection {
     color:none;
     background: none;
   }
@@ -154,7 +154,7 @@
     .searchBox {
       width: 80%;
     }
-    .profileButton, .uploadButton, .signInButton {
+    .profileButton, .homeButton, .signInButton {
       display: none;
       background-color: black;
     }

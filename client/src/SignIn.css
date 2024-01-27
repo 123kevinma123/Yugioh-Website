@@ -1,0 +1,118 @@
+.signInMain {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    color: #ffa4fa;
+    height: 500px;
+    width: 500px;
+    align-self: center;
+    border-bottom: 4px solid #ffa4fa;
+    border-radius: 5px;
+    background-color: black;
+    margin-top: -5em;
+    opacity: 85%;
+}
+.signInLogo {
+    color: #ffa4fa;
+    /*border: 2px solid green;*/
+    font-size: 40px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-inline: 50px;
+    height: 60px;
+    justify-content: center;
+}
+.signInLogo::selection {
+    color: none;
+    background: none;
+}
+.signInLogo:hover {
+    cursor: default;
+}
+.userName {
+    display: flex;
+    font-size: 16px;
+    color: #ffa4fa;
+    border: 2px solid #ffa4fa;
+    margin-inline: 50px;
+    margin-bottom: 30px;
+    height: 50px;
+    align-items: center;
+    padding-left: 20px;
+    border-radius: 5px;
+}
+.userName::selection {
+    color: none;
+    background: none;
+}
+.password {
+    display: flex;
+    font-size: 16px;
+    color: #ffa4fa;
+    border: 2px solid #ffa4fa;
+    margin-inline: 50px;
+    margin-bottom: 30px;
+    height: 50px;
+    align-items: center;
+    padding-left: 20px;
+    border-radius: 5px;
+}
+.password::selection {
+    color: none;
+    background: none;
+}
+.logInButton {
+    font-size: 16px;
+    color: black;
+    border: 2px solid #ffa4fa;
+    margin-inline: 50px;
+    height: 50px;
+    background-color: #ffa4fa;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+.logInButton::selection {
+    color: none;
+    background: none;
+}
+.logInButton:hover {
+    cursor: pointer;
+}
+.noAccount {
+    display: flex;
+    font-size: 16px;
+    color: #ffa4fa;
+    border: none;
+    margin-inline: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.noAccount::selection {
+    color: none;
+    background-color: none;
+}
+.noAccount:hover {
+    cursor: default;
+}
+.signUpButton {
+    display: flex;
+    font-size: 16px;
+    color: #ffa4fa;
+    border: none;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 20px;
+    text-decoration: underline;
+    align-items: center;
+}
+.signUpButton::selection {
+    color: none;
+    background: none;
+}
+.signUpButton:hover {
+    cursor: pointer;
+}

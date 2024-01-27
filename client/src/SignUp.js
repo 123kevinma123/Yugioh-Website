@@ -36,9 +36,11 @@ const SignIn = () => {
       };
     }, []);
 
-    const redirectToSignUp = () => {
-        navigate("/signUp");
+    const redirectToSignIn = () => {
+        navigate("/signIn");
     }
+
+    //edit css tmrw
 
     return (
         <div className = "wrapper">
@@ -47,7 +49,7 @@ const SignIn = () => {
             <img className = {`backgroundImage ${isClicked ? 'backgroundBlur' : ''}`} alt = "background image" />            
             <div className = {`signInMain ${isClicked ? 'backgroundBlur' : ''}`}>
               <div className = "signInLogo" >
-                Sign In
+                Sign Up
               </div>
               <div className = "userName">
                 Username
@@ -56,12 +58,12 @@ const SignIn = () => {
                 Password
               </div>
               <button className = "logInButton">
-                Sign In
+                Register
               </button>
               <div className = "noAccount">
                 No Account?
-                <button className = "signUpButton" onClick = {redirectToSignUp}>
-                    Sign up
+                <button className = "signUpButton" onClick = {redirectToSignIn}>
+                    Sign Up
                 </button>
               </div>
             </div>

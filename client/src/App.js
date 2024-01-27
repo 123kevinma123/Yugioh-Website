@@ -7,7 +7,10 @@ import {useState, useEffect, useRef} from "react";
 import {BrowserRouter as Router, Route, Routes, Link, useNavigate} from "react-router-dom";
 
 import Home from "./Home.js";
-import SignIn from "./SignIn.js"
+import SignIn from "./SignIn.js";
+import Profile from "./Profile.js";
+import Messages from "./Messages.js";
+import SignUp from "./SignUp.js"
 
 const apiCall = () => {
   axios.get('http://localhost:9000/').then((data) => {
@@ -32,7 +35,10 @@ function App() {
     <div className = "App">
       <Routes>
         <Route path = "/" element = {<Home/>} />
-        <Route path = "/SignIn" element = {<SignIn/>} />
+        <Route path = "/signIn" element = {<SignIn/>} />
+        <Route path = "/signUp" element = {<SignUp/>} />
+        <Route path = "/profile" element = {<Profile/>} />
+        <Route path = "/messages" element = {<Messages/>} />
       </Routes>
     </div>
   );

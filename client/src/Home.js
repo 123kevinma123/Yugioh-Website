@@ -7,6 +7,7 @@ import {useState, useEffect, useRef} from "react";
 import {BrowserRouter as Router, Route, Link, useNavigate} from "react-router-dom";
 
 import SignIn from "./SignIn.js";
+import NavBar from './NavBar.js';
 
 const apiCall = () => {
   axios.get('http://localhost:9000/').then((data) => {
@@ -25,65 +26,16 @@ const apiCall = () => {
 //probably replace "sign in" with "profile" after you sign in 
 
 
-function Home() {
+const Home = () => {
   
   const[isClicked, setIsClicked] = useState(false);
-  const navigate = useNavigate();
 
-  const menuClick = () => {
-    setIsClicked(!isClicked);
-    /*alert(isClicked);*/
-  }
-
-  const closeMenu = (e) => {
-    // Check if the click happened outside the dropdown menu
-    const dropdownMenu = document.querySelector(".dropDownMenu");
-    const icon = document.querySelector(".icon");
-    if (dropdownMenu && !dropdownMenu.contains(e.target)
-      && icon && !icon.contains(e.target)
-    ) {
-      setIsClicked(false);
-    }
-  };
-
-  useEffect(() => {
-    document.body.addEventListener("click", closeMenu);
-    return () => {
-      document.body.removeEventListener("click", closeMenu);
-    };
-  }, []);
-
-  const redirectToSignIn = () => {
-    navigate("/signIn");
-  };
-
+  //probably should render profile/messages button only if ur logged in
   return (
-
       <div className = "wrapper">
-        <header className = "navBar">
-          <div className = "logo">
-            Yugioh.Market
-          </div>
-          <nav className = "navList">
-            <div className = "icon" onClick = {menuClick}>
-            <FontAwesomeIcon icon = {faBars} />
-            </div>
-            <div className = {`navButtons ${isClicked ? 'clicked dropDownMenu' : ''}`}>
-              <button className = {`buttonStyle uploadButton ${isClicked ? 'clicked' : ''}`}>
-                Upload
-              </button>
-              <button className = {`buttonStyle profileButton ${isClicked ? 'clicked' : ''}`}>
-                Profile
-              </button>
-              <button className = {`buttonStyle signInButton ${isClicked ? 'clicked' : ''}`} onClick={redirectToSignIn}>
-                  Sign In
-              </button>
-            </div>
-          </nav>
-        </header>
+        <NavBar isClicked = {isClicked} setIsClicked = {setIsClicked}/>
         <div className = "mainBody">
-          <img className = {`backgroundImage ${isClicked ? 'backgroundBlur' : ''}`}>
-          </img>
+          <img className = {`backgroundImage ${isClicked ? 'backgroundBlur' : ''}`} alt = "background image" />
           <div className = {`searchBox ${isClicked ? 'backgroundBlur' : ''}`}>
             <div className = "searchContent">
               Search
