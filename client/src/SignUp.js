@@ -12,29 +12,6 @@ const SignIn = () => {
   
     const[isClicked, setIsClicked] = useState(false);
     const navigate = useNavigate();
-  
-    const menuClick = () => {
-      setIsClicked(!isClicked);
-      /*alert(isClicked);*/
-    }
-  
-    const closeMenu = (e) => {
-      // Check if the click happened outside the dropdown menu
-      const dropdownMenu = document.querySelector(".dropDownMenu");
-      const icon = document.querySelector(".icon");
-      if (dropdownMenu && !dropdownMenu.contains(e.target)
-        && icon && !icon.contains(e.target)
-      ) {
-        setIsClicked(false);
-      }
-    };
-  
-    useEffect(() => {
-      document.body.addEventListener("click", closeMenu);
-      return () => {
-        document.body.removeEventListener("click", closeMenu);
-      };
-    }, []);
 
     const redirectToSignIn = () => {
         navigate("/signIn");
@@ -47,8 +24,8 @@ const SignIn = () => {
           <NavBar isClicked = {isClicked} setIsClicked = {setIsClicked}/>
           <div className = "mainBody">
             <img className = {`backgroundImage ${isClicked ? 'backgroundBlur' : ''}`} alt = "background image" />            
-            <div className = {`signInMain ${isClicked ? 'backgroundBlur' : ''}`}>
-              <div className = "signInLogo" >
+            <div className = {`signUpMain ${isClicked ? 'backgroundBlur' : ''}`}>
+              <div className = "signUpInLogo" >
                 Sign Up
               </div>
               <div className = "userName">
@@ -57,13 +34,16 @@ const SignIn = () => {
               <div className = "password">
                 Password
               </div>
+              <div className = "confirmPassword">
+                Confirm Password
+              </div>
               <button className = "logInButton">
                 Register
               </button>
               <div className = "noAccount">
                 No Account?
-                <button className = "signUpButton" onClick = {redirectToSignIn}>
-                    Sign Up
+                <button className = "signUpInButton" onClick = {redirectToSignIn}>
+                    Sign In
                 </button>
               </div>
             </div>

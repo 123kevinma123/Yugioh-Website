@@ -12,29 +12,6 @@ const SignIn = () => {
   
     const[isClicked, setIsClicked] = useState(false);
     const navigate = useNavigate();
-  
-    const menuClick = () => {
-      setIsClicked(!isClicked);
-      /*alert(isClicked);*/
-    }
-  
-    const closeMenu = (e) => {
-      // Check if the click happened outside the dropdown menu
-      const dropdownMenu = document.querySelector(".dropDownMenu");
-      const icon = document.querySelector(".icon");
-      if (dropdownMenu && !dropdownMenu.contains(e.target)
-        && icon && !icon.contains(e.target)
-      ) {
-        setIsClicked(false);
-      }
-    };
-  
-    useEffect(() => {
-      document.body.addEventListener("click", closeMenu);
-      return () => {
-        document.body.removeEventListener("click", closeMenu);
-      };
-    }, []);
 
     const redirectToSignUp = () => {
         navigate("/signUp");
@@ -46,7 +23,7 @@ const SignIn = () => {
           <div className = "mainBody">
             <img className = {`backgroundImage ${isClicked ? 'backgroundBlur' : ''}`} alt = "background image" />            
             <div className = {`signInMain ${isClicked ? 'backgroundBlur' : ''}`}>
-              <div className = "signInLogo" >
+              <div className = "signUpInLogo" >
                 Sign In
               </div>
               <div className = "userName">
@@ -60,8 +37,8 @@ const SignIn = () => {
               </button>
               <div className = "noAccount">
                 No Account?
-                <button className = "signUpButton" onClick = {redirectToSignUp}>
-                    Sign up
+                <button className = "signUpInButton" onClick = {redirectToSignUp}>
+                    Sign Up
                 </button>
               </div>
             </div>

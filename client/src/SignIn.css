@@ -12,7 +12,21 @@
     margin-top: -5em;
     opacity: 85%;
 }
-.signInLogo {
+.signUpMain {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    color: #ffa4fa;
+    height: 600px;
+    width: 500px;
+    align-self: center;
+    border-bottom: 4px solid #ffa4fa;
+    border-radius: 5px;
+    background-color: black;
+    margin-top: -5em;
+    opacity: 85%;
+}
+.signUpInLogo {
     color: #ffa4fa;
     /*border: 2px solid green;*/
     font-size: 40px;
@@ -61,6 +75,22 @@
     color: none;
     background: none;
 }
+.confirmPassword {
+    display: flex;
+    font-size: 16px;
+    color: #ffa4fa;
+    border: 2px solid #ffa4fa;
+    margin-inline: 50px;
+    margin-bottom: 30px;
+    height: 50px;
+    align-items: center;
+    padding-left: 20px;
+    border-radius: 5px;
+}
+.confirmPassword::selection {
+    color: none;
+    background: none;
+}
 .logInButton {
     font-size: 16px;
     color: black;
@@ -98,7 +128,7 @@
 .noAccount:hover {
     cursor: default;
 }
-.signUpButton {
+.signUpInButton {
     display: flex;
     font-size: 16px;
     color: #ffa4fa;
@@ -109,10 +139,10 @@
     text-decoration: underline;
     align-items: center;
 }
-.signUpButton::selection {
+.signUpInButton::selection {
     color: none;
     background: none;
 }
-.signUpButton:hover {
+.signUpInButton:hover {
     cursor: pointer;
 }
