@@ -1,8 +1,9 @@
 //import logo from './logo.svg';
 import axios from 'axios';
 import './Home.css';
+import "./Search.css";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import {useState, useEffect, useRef} from "react";
 import {BrowserRouter as Router, Route, Link, useNavigate} from "react-router-dom";
 
@@ -30,6 +31,29 @@ const Home = () => {
   
   const[isClicked, setIsClicked] = useState(false);
 
+  const[input, setInput] = useState("");
+
+  const fetchData = (value) => {
+    fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php")
+    .then((response) => response.json())
+    .then((data) => {
+      const cards = data && data.data ? data.data : [];
+
+      const cardNames = cards.map((card) => {
+        return card && card.name ? card.name : null;
+      });
+
+      const filteredNames = cardNames.filter((name) => {
+        return name && name.toLowerCase().includes(value.toLowerCase());
+      });
+      console.log(filteredNames);
+    });
+  } 
+
+  const handleChange = (value) => {
+    setInput(value);
+    fetchData(value);
+  }
   //probably should render profile/messages button only if ur logged in
   return (
       <div className = "wrapper">
@@ -37,8 +61,13 @@ const Home = () => {
         <div className = "mainBody">
           <img className = {`backgroundImage ${isClicked ? 'backgroundBlur' : ''}`} alt = "background image" />
           <div className = {`searchBox ${isClicked ? 'backgroundBlur' : ''}`}>
-            <div className = "searchContent">
-              Search
+            <input placeholder = "Type to Search..." 
+              className = "searchContent" 
+              value = {input} 
+              onChange = {(e) => handleChange(e.target.value)} 
+            />
+            <div className = "searchIcon">
+              <FontAwesomeIcon icon = {faSearch} />
             </div>
           </div>
         </div>

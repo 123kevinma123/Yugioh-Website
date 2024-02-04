@@ -64,7 +64,6 @@ const NavBar = ({isClicked, setIsClicked}) => {
             <div className = "icon" onClick = {menuClick}>
             <FontAwesomeIcon icon = {faBars} />
             </div>
-            {console.log(isClicked)}
             <div className = {`navButtons ${isClicked ? 'clicked dropDownMenu' : ''}`}>
               <button className = {`buttonStyle homeButton ${isClicked ? 'clicked' : ''}`} onClick = {redirectToHome}>
                 Home
