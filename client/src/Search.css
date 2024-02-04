@@ -21,13 +21,11 @@
     margin-left: 1em;
     color: #ffa4fa;
     font-size: 1em;
+    width: 400px;
+    height: 3em;
   }
   .searchContent::placeholder {
     color: #ffa4fa;
-  }
-  .searchContent::selection {
-    color: none;
-    background: none;
   }
   input:focus {
     outline: none;
