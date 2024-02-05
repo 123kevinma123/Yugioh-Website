@@ -9,7 +9,7 @@ import {BrowserRouter as Router, Route, Link, useNavigate} from "react-router-do
 
 import SignIn from "./SignIn.js";
 import NavBar from './NavBar.js';
-
+import Search from "./Search.js";
 const apiCall = () => {
   axios.get('http://localhost:9000/').then((data) => {
     //this console.log will be in our frontend console
@@ -31,54 +31,14 @@ const Home = () => {
   
   const[isClicked, setIsClicked] = useState(false);
 
-  const[input, setInput] = useState("");
-
-  const fetchData = (value) => {
-    fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php")
-    .then((response) => response.json())
-    .then((data) => {
-      const cards = data && data.data ? data.data : [];
-
-      const cardNames = cards.map((card) => {
-        return card && card.name ? card.name : null;
-      });
-
-      const filteredNames = cardNames.filter((name) => {
-        return name && name.toLowerCase().includes(value.toLowerCase());
-      });
-      console.log(filteredNames);
-    });
-  } 
-
-  const handleChange = (value) => {
-    setInput(value);
-    fetchData(value);
-  }
   //probably should render profile/messages button only if ur logged in
   return (
       <div className = "wrapper">
         <NavBar isClicked = {isClicked} setIsClicked = {setIsClicked}/>
         <div className = "mainBody">
           <img className = {`backgroundImage ${isClicked ? 'backgroundBlur' : ''}`} alt = "background image" />
-          <div className = {`searchBox ${isClicked ? 'backgroundBlur' : ''}`}>
-            <input placeholder = "Type to Search..." 
-              className = "searchContent" 
-              value = {input} 
-              onChange = {(e) => handleChange(e.target.value)} 
-            />
-            <div className = "searchIcon">
-              <FontAwesomeIcon icon = {faSearch} />
-            </div>
-          </div>
+          <Search isClicked = {isClicked} />
         </div>
-        {/*<footer className = "footer">
-          <div className = "footerText">
-            Copyright Kevin Ma 2024
-          </div>
-          <div className = "footerSocials">
-            Socials here
-          </div>
-    </footer> */}
       </div>
   );
 }
