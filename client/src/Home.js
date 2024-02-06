@@ -27,7 +27,7 @@ const apiCall = () => {
 //probably replace "sign in" with "profile" after you sign in 
 
 
-const Home = () => {
+const Home = ({setSearchResult}) => {
   
   const[isClicked, setIsClicked] = useState(false);
 
@@ -37,7 +37,7 @@ const Home = () => {
         <NavBar isClicked = {isClicked} setIsClicked = {setIsClicked}/>
         <div className = "mainBody">
           <img className = {`backgroundImage ${isClicked ? 'backgroundBlur' : ''}`} alt = "background image" />
-          <Search isClicked = {isClicked} />
+          <Search isClicked = {isClicked} setSearchResult = {setSearchResult}/>
         </div>
       </div>
   );

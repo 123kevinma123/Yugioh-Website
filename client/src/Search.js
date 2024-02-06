@@ -4,9 +4,11 @@ import "./Search.css";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import {useState, useEffect, useRef} from "react";
+import {BrowserRouter as Router, Route, Link, useNavigate} from "react-router-dom";
 
-const Search = ({isClicked}) => {
+const Search = ({isClicked, setSearchResult}) => {
 
+  const navigate = useNavigate();
   const [results, setResults] = useState([]);
   const[input, setInput] = useState("");
 
@@ -32,6 +34,10 @@ const Search = ({isClicked}) => {
     setInput(value);
     fetchData(value);
   }
+  const redirectToResults = (result) => {
+    setSearchResult(result);
+    navigate(`/results/${result}`);
+  }
     return (
         <>
             <div className = {`searchBox ${isClicked ? 'backgroundBlur' : ''}`}>
@@ -48,7 +54,7 @@ const Search = ({isClicked}) => {
                 {
                     input.trim() !== "" &&
                     results.slice(0,5).map((result, id) => {
-                        return <div className = "searchResults" key = {id} onClick = {(e) => alert(`you clicked on ${result}`)}>
+                        return <div className = "searchResults" key = {id} onClick = {(e) => redirectToResults(result)}>
                             {result}
                         </div>
 

@@ -10,7 +10,8 @@ import Home from "./Home.js";
 import SignIn from "./SignIn.js";
 import Profile from "./Profile.js";
 import Messages from "./Messages.js";
-import SignUp from "./SignUp.js"
+import SignUp from "./SignUp.js";
+import Results from "./Results.js";
 
 const apiCall = () => {
   axios.get('http://localhost:9000/').then((data) => {
@@ -30,15 +31,16 @@ const apiCall = () => {
 
 
 function App() {
-  const navigate = useNavigate();
+  const[searchResult, setSearchResult] = useState("");
   return (
     <div className = "App">
       <Routes>
-        <Route path = "/" element = {<Home/>} />
+        <Route path = "/" element = {<Home setSearchResult = {setSearchResult}/>} />
         <Route path = "/signIn" element = {<SignIn/>} />
         <Route path = "/signUp" element = {<SignUp/>} />
         <Route path = "/profile" element = {<Profile/>} />
         <Route path = "/messages" element = {<Messages/>} />
+        <Route path = {`/results/${searchResult}`} element = {<Results searchResult = {searchResult}/>} />
       </Routes>
     </div>
   );
