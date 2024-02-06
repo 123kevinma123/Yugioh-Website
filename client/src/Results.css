@@ -1,0 +1,14 @@
+.temp {
+    display: flex;
+    z-index: 1;
+    color: #ffa4fa;
+    background-color: red;
+    /*border: 4px solid red;*/
+    width: 800px;
+    overflow: hidden;
+    margin-top: 445px;
+    height: fit-content;
+    opacity: 85%;
+    border-radius: 5px;
+
+}

@@ -40,7 +40,7 @@ function App() {
         <Route path = "/signUp" element = {<SignUp/>} />
         <Route path = "/profile" element = {<Profile/>} />
         <Route path = "/messages" element = {<Messages/>} />
-        <Route path = {`/results/${searchResult}`} element = {<Results searchResult = {searchResult}/>} />
+        <Route path = {`/results/${searchResult}`} element = {<Results searchResult = {searchResult} setSearchResult = {setSearchResult}/>} />
       </Routes>
     </div>
   );
