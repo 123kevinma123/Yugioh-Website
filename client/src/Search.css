@@ -1,14 +1,13 @@
+
 .searchBox {
-    z-index: 1;
+  z-index: 1;
     display: flex;
     color: #ffa4fa;
     height: 4em;
     width: 800px;
-    align-self: center;
     border-bottom: 4px solid #ffa4fa;
     border-radius: 5px;
     background-color: black;
-    margin-top: -5em;
     align-items: center;
     opacity: 85%;
     justify-content: space-between;
@@ -49,7 +48,7 @@
     width: 800px;
     flex-direction: column;
     overflow: hidden;
-    margin-top: 445px;
+    position: relative;
     height: fit-content;
     opacity: 85%;
     border-radius: 5px;

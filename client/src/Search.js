@@ -6,7 +6,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import {useState, useEffect, useRef} from "react";
 import {BrowserRouter as Router, Route, Link, useNavigate} from "react-router-dom";
 
-const Search = ({isClicked, setSearchResult}) => {
+const Search = ({isClicked, setSearchResult, position}) => {
 
   const navigate = useNavigate();
   const [results, setResults] = useState([]);
@@ -40,7 +40,11 @@ const Search = ({isClicked, setSearchResult}) => {
   }
     return (
         <>
-            <div className = {`searchBox ${isClicked ? 'backgroundBlur' : ''}`}>
+            <div className = {`searchBox ${isClicked ? 'backgroundBlur' : ''}`} 
+            style={{
+              alignSelf: position === 'middle' ? 'center' : 'baseline', 
+              marginTop: position === 'middle' ? '-5em' : '5em'
+            }}>
                 <input placeholder = "Type to Search..." 
                     className = "searchContent" 
                     value = {input} 
@@ -50,7 +54,10 @@ const Search = ({isClicked, setSearchResult}) => {
                     <FontAwesomeIcon icon = {faSearch} />
                 </div>
             </div>
-            <div className = "searchResultsList">
+            <div className = {`searchResultsList ${isClicked ? 'backgroundBlur' : ''}`}
+            style={{
+              marginTop: position === 'middle' ? '445px' : "140px"
+            }}>
                 {
                     input.trim() !== "" &&
                     results.slice(0,5).map((result, id) => {

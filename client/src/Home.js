@@ -37,7 +37,7 @@ const Home = ({setSearchResult}) => {
         <NavBar isClicked = {isClicked} setIsClicked = {setIsClicked}/>
         <div className = "mainBody">
           <img className = {`backgroundImage ${isClicked ? 'backgroundBlur' : ''}`} alt = "background image" />
-          <Search isClicked = {isClicked} setSearchResult = {setSearchResult}/>
+          <Search isClicked = {isClicked} setSearchResult = {setSearchResult} position = "middle"/>
         </div>
       </div>
   );
