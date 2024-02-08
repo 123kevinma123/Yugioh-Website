@@ -12,11 +12,9 @@ const Results = ({searchResult, setSearchResult}) => {
         <div className = "mainBody">
           <img className = {`backgroundImage ${isClicked ? 'backgroundBlur' : ''}`} alt = "background image" />
           <Search isClicked = {isClicked} setSearchResult = {setSearchResult} position = ""/>
-        </div>
-        <div className = "resultsBody">
-          <div className = "temp">
+          {/*<div className = "temp">
             You searched for {searchResult}
-          </div>
+    </div> */}
         </div>
       </div>
     );

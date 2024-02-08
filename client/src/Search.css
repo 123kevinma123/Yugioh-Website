@@ -1,6 +1,12 @@
-
-.searchBox {
+.searchBody {
   z-index: 1;
+  display: flex;
+  /*border: 2px solid red;*/
+  width: 100vw;
+  flex-direction: column;
+}
+.searchBox {
+    z-index: 1;
     display: flex;
     color: #ffa4fa;
     height: 4em;
@@ -11,7 +17,8 @@
     align-items: center;
     opacity: 85%;
     justify-content: space-between;
-    position: fixed;
+    margin-top: 350px;
+    align-self: center;
   }
   .searchBox:hover {
     cursor: text;
@@ -47,11 +54,12 @@
     /*border: 4px solid red;*/
     width: 800px;
     flex-direction: column;
-    overflow: hidden;
-    position: relative;
     height: fit-content;
     opacity: 85%;
     border-radius: 5px;
+    align-self: center;
+    overflow: hidden;
+    margin-top: -5px;
   }
   .searchResults {
     z-index: 1;

@@ -39,11 +39,10 @@ const Search = ({isClicked, setSearchResult, position}) => {
     navigate(`/results/${result}`);
   }
     return (
-        <>
+        <div className = "searchBody">
             <div className = {`searchBox ${isClicked ? 'backgroundBlur' : ''}`} 
             style={{
-              alignSelf: position === 'middle' ? 'center' : 'baseline', 
-              marginTop: position === 'middle' ? '-5em' : '5em'
+              marginTop: position === 'middle' ? '350px' : '100px'
             }}>
                 <input placeholder = "Type to Search..." 
                     className = "searchContent" 
@@ -54,10 +53,7 @@ const Search = ({isClicked, setSearchResult, position}) => {
                     <FontAwesomeIcon icon = {faSearch} />
                 </div>
             </div>
-            <div className = {`searchResultsList ${isClicked ? 'backgroundBlur' : ''}`}
-            style={{
-              marginTop: position === 'middle' ? '445px' : "140px"
-            }}>
+            <div className = {`searchResultsList ${isClicked ? 'backgroundBlur' : ''}`}>
                 {
                     input.trim() !== "" &&
                     results.slice(0,5).map((result, id) => {
@@ -67,8 +63,8 @@ const Search = ({isClicked, setSearchResult, position}) => {
 
                     })
                 }
-            </div>
-        </>
+              </div>
+        </ div>
     );
 }
 export default Search;
